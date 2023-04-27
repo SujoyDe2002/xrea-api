@@ -2,7 +2,7 @@ const client = require('./connection.js')
 const express = require('express')
 const bodyParser = require("body-parser");
 const cors = require('cors')
-const port = 3012;
+const port = 3011;
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
