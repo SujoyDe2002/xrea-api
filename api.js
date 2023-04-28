@@ -92,10 +92,10 @@ app.post('/search', urlencodedParser, (req, res) => {
     }
     let labelDescQuery = '';
     if (y) {
-        labelDescQuery = "select use_case_group, use_case_group_desc, priority_label from use_case_master where use_case_group in (" + usecaselabel + ") ORDER BY priority_label";
+        labelDescQuery = "select use_case_group, use_case_group_desc, use_case_color, priority_label from use_case_master where use_case_group in (" + usecaselabel + ") ORDER BY priority_label";
     }
     else {
-        labelDescQuery = "select use_case_group, use_case_group_desc, priority_label from use_case_master ORDER BY priority_label";
+        labelDescQuery = "select use_case_group, use_case_group_desc, use_case_color, priority_label from use_case_master ORDER BY priority_label";
     }
 
     const myArray = usercaselabel1.split(",");
@@ -141,9 +141,11 @@ app.post('/search', urlencodedParser, (req, res) => {
 
                         if (result.rows[j].ten_year_pop_growth_rate) {
 
-                            tenYearPopGrowthRate = parseFloat(result.rows[j].ten_year_pop_growth_rate).toFixed(1);
-                            tenYearPopGrowthRatePercentage = tenYearPopGrowthRate + "%";
+                            tenYearPopGrowthRate = parseFloat(result.rows[j].ten_year_pop_growth_rate);
+                            tenYearPopGrowthRate = Math.abs(tenYearPopGrowthRate) * 100;
+                            tenYearPopGrowthRatePercentage = tenYearPopGrowthRate.toFixed(1) + "%";
                             tenYearPopGrowthRate = tenYearPopGrowthRatePercentage
+                            
                         }
                         else {
                             tenYearPopGrowthRate = "NA"
