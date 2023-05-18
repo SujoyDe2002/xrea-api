@@ -1,6 +1,6 @@
 const searchdata = {
 
-    maxValue: 10
+    maxValue: 15
 
 }
 

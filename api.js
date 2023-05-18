@@ -7,9 +7,11 @@ const { query } = require('express');
 const { searchdata } = require('./configsetup.js');
 const maxDraftedData = searchdata.maxValue;
 const port = 3011;
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const app = express();
+
 app.listen(port, () => {
     console.log("server is now listening at port" + port);
 })
@@ -59,7 +61,7 @@ app.get('/users/geographicAreaName', urlencodedParser, (req, res) => {
 
                 // res.send(myobj);
                 res.status(200).send(myobj);
-                console.log("Hi");
+                // console.log("Hi");
             }
         }
         catch (err) {
@@ -716,7 +718,7 @@ app.post('/saveSearch', (req, res) => {
                 let insertQuery = `insert into save_search_criteria(user_id, save_search_title, ${b}, ${c}, ${d},${e},${f},created_by, updated_by,user_type) 
                     values` + `(${req.body.user_id}, '${req.body.name}',` + value_string + `,` + value_string1 + `,` + value_string3 + `,` + value_string4 + `,` + value_string5 + `,1,1,'USER')`;
 
-                console.log(insertQuery);
+                // console.log(insertQuery);
                 client.query(insertQuery, (err, result) => {
                     if (!err) {
 
@@ -795,7 +797,7 @@ app.get('/searchList', urlencodedParser, (req, res) => {
 
     const myObj2 = {};
     if (a)
-        client.query("select user_id, save_search_title, save_search_id from save_search_criteria where user_id = '" + a + "'and active_status='true' and user_type = 'USER' ", (err, result) => {
+        client.query("select user_id, save_search_title, save_search_id,created_on from save_search_criteria where user_id = '" + a + "'and active_status='true' and user_type = 'USER' ", (err, result) => {
             if (!err && result.rows) {
 
                 //res.send(result.rows);
