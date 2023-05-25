@@ -454,19 +454,21 @@ function mailConfiguration(req) {
         to: mailTo,
         subject: `Market Study Request From ${companyName}`,
         html: `
-            <h1>${username}</h1>
+            <h1>User Name : ${username}</h1>
             </br>
-            <h1>${firstName} ${lastName}</h1>
+            <h1>User First Name : ${firstName} , User Last Name :  ${lastName}</h1>
             </br>
-            <h1>${phoneNo}</h1>
+            <h1>User Email : ${mailTo}</h1>
             </br>
-            <h1>${companyName}</h1>
+            <h1>User Phone Number : ${phoneNo}</h1>
             </br>
-            <h1>${cityList}</h1>
+            <h1>Company Name : ${companyName}</h1>
             </br>
-            <h1>${CaseList}</h1>
+            <h1>List of Last Cities Searched Before Submitting : ${cityList}</h1>
             </br>
-            <h1>${now}</h1>
+            <h1>List of Use Cases Searched Before Submitting : ${CaseList}</h1>
+            </br>
+            <h1>Submit Timestamp : ${now}</h1>
             </br>
         `
     }
@@ -797,7 +799,7 @@ app.get('/searchList', urlencodedParser, (req, res) => {
 
     const myObj2 = {};
     if (a)
-        client.query("select user_id, save_search_title, save_search_id,created_on from save_search_criteria where user_id = '" + a + "'and active_status='true' and user_type = 'USER' ", (err, result) => {
+        client.query("select user_id, save_search_title, save_search_id,created_on from save_search_criteria where user_id = '" + a + "'and active_status='true' and user_type = 'USER' order by updation_date desc", (err, result) => {
             if (!err && result.rows) {
 
                 //res.send(result.rows);

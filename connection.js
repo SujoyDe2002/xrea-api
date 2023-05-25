@@ -1,4 +1,4 @@
-const {Client} = require('pg')
+const { Client } = require('pg')
 
 //const client = new Client({
 //    host : "192.168.1.141",
@@ -7,6 +7,7 @@ const {Client} = require('pg')
 //    password : "Manna@2023",
 //    database : "XREA"
 //})
+
 const client = new Client({
     host: "xrea-india-postgres.postgres.database.azure.com",
     user: "xreaadmin@xrea-india-postgres",
@@ -14,6 +15,5 @@ const client = new Client({
     password: "xr34-4dm1n-0e2K5!",
     database: "postgres"
 })
+
 module.exports = client
-
-
