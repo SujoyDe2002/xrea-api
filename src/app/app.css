@@ -1,0 +1,1214 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dl-color-gray-500: #595959;
+  --dl-color-gray-700: #999999;
+  --dl-color-gray-900: #D9D9D9;
+  --dl-size-size-large: 144px;
+  --dl-size-size-small: 48px;
+  --dl-color-danger-300: #A22020;
+  --dl-color-danger-500: #BF2626;
+  --dl-color-danger-700: #E14747;
+  --dl-color-gray-black: #000000;
+  --dl-color-gray-white: #FFFFFF;
+  --dl-size-size-medium: 96px;
+  --dl-size-size-xlarge: 192px;
+  --dl-size-size-xsmall: 16px;
+  --dl-space-space-unit: 16px;
+  --dl-color-primary-100: #003EB3;
+  --dl-color-primary-300: #0074F0;
+  --dl-color-primary-500: #14A9FF;
+  --dl-color-primary-700: #85DCFF;
+  --dl-color-success-300: #199033;
+  --dl-color-success-500: #32A94C;
+  --dl-color-success-700: #4CC366;
+  --dl-size-size-xxlarge: 288px;
+  --dl-size-size-maxwidth: 1400px;
+  --dl-radius-radius-round: 50%;
+  --dl-space-space-halfunit: 8px;
+  --dl-space-space-sixunits: 96px;
+  --dl-space-space-twounits: 32px;
+  --dl-radius-radius-radius2: 2px;
+  --dl-radius-radius-radius4: 4px;
+  --dl-radius-radius-radius8: 8px;
+  --dl-space-space-fiveunits: 80px;
+  --dl-space-space-fourunits: 64px;
+  --dl-space-space-threeunits: 48px;
+  --dl-space-space-oneandhalfunits: 24px;
+}
+
+.button {
+  color: var(--dl-color-gray-black);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: var(--dl-color-gray-white);
+}
+
+.autocompleteInput .css-w6fb6m input {
+  height: 54px;
+ 
+}
+.autocompleteInput> div> div {
+  font-size: 1.125rem;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+.autocompleteInput> div {
+  align-items: center;
+}
+
+.textarea {
+  color: var(--dl-color-gray-black);
+  cursor: auto;
+  padding: 0.5rem;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: var(--dl-color-gray-white);
+}
+
+.list {
+  width: 100%;
+  margin: 1em 0px 1em 0px;
+  display: block;
+  padding: 0px 0px 0px 1.5rem;
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+.list-item {
+  display: list-item;
+}
+
+.teleport-show {
+  display: flex !important;
+  transform: none !important;
+}
+
+.Content {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.Heading {
+  font-size: 32px;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.image {
+  width: 62%;
+  height: auto;
+}
+@media only screen and (min-width: 640) {
+  .image {
+    width: 74%;
+  }
+}
+.frame-homepagewiththesearchbarandthetotallistofclu-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.border_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #3174CF;
+  display: flex;
+  justify-content: center;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame-homepagewiththesearchbarandthetotallistofclu {
+  width: 100%;
+  height: 1522px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.logo {
+  /* width: auto;
+  height: 2.1vw; */
+  width: 11.78vw;
+  height: auto;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-empty-header {
+  top: 18px;
+  left: 0px;
+  width: 100%;
+  height: 259px;
+  display: flex;
+  /* position: relative; */
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  background: #20416e;
+  ;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle1 {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 230px;
+  /* position: relative; */
+  border-color: transparent;
+}
+
+.top_block {
+  width: 100%;
+  position: relative;
+  top: 0;
+  height: 500px;
+  /* background: #3174CF; */
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle14 {
+  top: 172px;
+  left: 144px;
+  width: 1440px;
+  height: 119px;
+  position: relative;
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame21 {
+  top: 74.5px;
+  left: 169.0167999267578px;
+  width: 1391px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  justify-content: space-between;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group7 {
+  width: 187px;
+  height: 40px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group4 {
+  top: 0px;
+  left: 0px;
+  width: 96px;
+  height: 40px;
+  display: flex;
+  padding: 0;
+  /* position: relative; */
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle4 {
+  top: 18px;
+  left: 44px;
+  width: 30px;
+  height: 22px;
+  position: relative;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle5 {
+  top: 40px;
+  left: 54px;
+  width: 42px;
+  height: 40px;
+  position: relative;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-polygon1 {
+  top: 26px;
+  left: 54px;
+  width: 16px;
+  height: 14px;
+  position: relative;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle11 {
+  top: 18px;
+  left: 0px;
+  width: 30px;
+  height: 22px;
+  position: relative;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle3 {
+  top: 40px;
+  left: 70px;
+  width: 42px;
+  height: 40px;
+  position: relative;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-austin-tacos {
+  /* width: 71px;
+  height: 1vw */
+  width: 8.25vw;
+  height: auto;
+  margin-left: .5rem;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group20 {
+  width: 187px;
+  height: 47px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+  align-items: center;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-image2 {
+  top: 0px;
+  left: 0px;
+  /* width: 30px; */
+  width: 5.9vw;
+  height: auto;
+  position: relative;
+  border-color: transparent;
+}
+
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text {
+  top: 8px;
+  left: 57px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: relative;
+  font-size: 10px;
+
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text01 {
+  font-weight: 700;
+  font-size: 16px;
+
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-image4 {
+  top: 90px;
+  left: 1372px;
+  width: 49px;
+  height: 49px;
+  /* position: relative; */
+  border-color: transparent;
+  border-radius: 100px;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group63 {
+  top: 204px;
+  left: 144px;
+  /* width: 80%; */
+  height: 295px;
+  display: flex;
+  padding: 0;
+  /* position: relative; */
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-radius: 20%;
+  border-width: 0;
+  margin-right: 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 20px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.cardshawdow {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.cardList {
+
+  top: 204px;
+  left: 144px;
+  position: relative;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-groupNew {
+  /* top: 204px;
+    left: 144px;
+    position: relative; */
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  padding: 0;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-image3 {
+  /* top: 32px; */
+  /* left: 1154px; */
+  width: auto;
+  height: 100%;
+  margin: auto;
+  /* position: relative;
+    border-color: transparent; */
+}
+
+
+.img-bar{
+  height: 100%;
+  width: 64%;
+  margin: auto;
+}
+.overlay-image {
+  width:42.5%;
+}
+.align_right {
+  margin-left: auto;
+
+}
+
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group42 {
+  top: 140px;
+  left: 25px;
+  width: 1145px;
+  height: 124.09099578857422px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text06 {
+  color: rgba(61, 61, 61, 1);
+  width: 217px;
+  height: auto;
+  position: relative;
+  font-size: 13px;
+  align-self: auto;
+  font-style: Light;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 300;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame22 {
+  top: 51.4091796875px;
+  left: 0px;
+  width: 1145px;
+  height: 72.68181610107422px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion {
+  top: -23.3182373046875px;
+  left: 0px;
+  width: 638px;
+  display: flex;
+  padding: 10px 15px;
+  position: relative;
+  align-items: flex-start;
+  border-color: transparent;
+  border-radius: 3px;
+  background-color: rgba(249, 249, 249, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text08 {
+  /* color: rgba(168, 168, 168, 1);
+    height: auto;
+    font-size: 18px;
+  
+    align-self: auto;
+    font-style: Bold;
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-weight: 700;
+    line-height: 107.50000476837158%;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none; */
+  color: rgba(168, 168, 168, 1);
+  height: auto;
+  font-size: 12px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  /* line-height: 107.50000476837158%; */
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+  background-color: rgba(249, 249, 249, 1);
+  margin: 0 8px 8px 0;
+  padding: 7px;
+  border-radius: 4px;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion1 {
+  top: -23.4091796875px;
+  left: 646px;
+  width: 213px;
+  display: flex;
+  padding: 10px 15px;
+  position: relative;
+  align-items: flex-start;
+  border-color: transparent;
+  border-radius: 3px;
+  background-color: rgba(249, 249, 249, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text10 {
+  color: rgba(168, 168, 168, 1);
+  height: auto;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+/* .frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion2 {
+    top: 24.5908203125px;
+    left: 0px;
+    width: 700px;
+    display: flex;
+    padding: 10px 15px;
+    position: relative;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgba(249, 249, 249, 1);
+  } */
+.frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom {
+  top: 24.5908203125px;
+  left: 0px;
+  width: fit-content;
+  display: flex;
+  /* padding: 8px 12px; */
+  /* position: relative; */
+  align-items: flex-start;
+  /* border-color: transparent; */
+  border-radius: 5px;
+  /* background-color: rgba(249, 249, 249, 1); */
+
+
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text12 {
+  color: rgba(168, 168, 168, 1);
+  height: auto;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text14 {
+  color: #3E3E3E;
+  width: 100%;
+  height: auto;
+  position: relative;
+  font-size: 17px;
+  align-self: auto;
+  font-style: italic;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+  font-stretch: normal;
+  text-decoration: none;
+
+}
+
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group64 {
+  top: 480px;
+  left: 144px;
+  width: 1440px;
+  height: 295px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group421 {
+  top: 190.4091339111328px;
+  left: 25px;
+  width: 1145px;
+  height: 72.68181610107422px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame221 {
+  top: 0px;
+  left: 0px;
+  width: 1145px;
+  height: 72.68181610107422px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text19 {
+  top: 48px;
+  left: 340px;
+  color: rgba(61, 61, 61, 1);
+  width: 958px;
+  height: auto;
+  position: relative;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: italic;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group65 {
+  top: 820px;
+  left: 144px;
+  width: 1440px;
+  height: 295px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group422 {
+  top: 190.4091339111328px;
+  left: 25px;
+  width: 1145px;
+  height: 72.68181610107422px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame222 {
+  top: 0px;
+  left: 0px;
+  width: 1145px;
+  height: 72.68181610107422px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame211 {
+  top: 16.5908203125px;
+  left: 958px;
+  width: 159px;
+  margin-top: 20px;
+
+  height: 40px;
+  display: flex;
+  padding: 5px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 4px;
+  justify-content: center;
+  background-color: rgba(0, 71, 157, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text21 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text23 {
+  top: 45px;
+  left: 48px;
+  color: rgba(61, 61, 61, 1);
+  width: 958px;
+  height: auto;
+  position: relative;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: italic;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-image5 {
+  top: 528px;
+  left: 198px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text25 {
+  top: 618px;
+  left: 484px;
+  color: rgba(0, 0, 0, 1);
+  width: 974px;
+  height: auto;
+  position: relative;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text32 {
+  top: 949px;
+  left: 192px;
+  color: rgba(0, 0, 0, 1);
+  width: 974px;
+  height: auto;
+  position: relative;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame212 {
+  top: 703px;
+  left: 1383px;
+  width: 159px;
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+  padding: 5px 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 4px;
+  justify-content: center;
+  background-color: rgba(0, 71, 157, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text39 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-image6 {
+  top: 872px;
+  left: 1351px;
+  width: 191px;
+  height: 191px;
+  position: relative;
+  border-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group59 {
+  top: 1160px;
+  left: 144px;
+  width: 1440px;
+  height: 233px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group41 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 233px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group27 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 233px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group54 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 233px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgba(232, 243, 253, 1);
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group32 {
+  top: 39px;
+  left: 1161px;
+  width: 231px;
+  height: 194px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-frame27 {
+  top: 0px;
+  left: 0px;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  border-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle31 {
+  width: 69px;
+  height: 90px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 13px;
+  border-radius: 10px 10px 0 0;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle30 {
+  width: 68px;
+  height: 145px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 13px;
+  border-radius: 10px 10px 0 0;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle29 {
+  width: 68px;
+  height: 194px;
+  position: relative;
+  border-color: transparent;
+  border-radius: 10px 10px 0 0;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group26 {
+  top: 39px;
+  left: 37px;
+  width: 361px;
+  height: 163px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text41 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: relative;
+  font-size: 18px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text43 {
+  top: 58px;
+  left: 1px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: relative;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 400;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-rectangle27 {
+  top: 121px;
+  left: 0px;
+  width: 182px;
+  height: 42px;
+  position: relative;
+  border-color: transparent;
+  border-radius: 3px;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text48 {
+  top: 130px;
+  left: 38px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: relative;
+  font-size: 18px;
+
+  align-self: auto;
+  font-style: Medium;
+  text-align: left;
+  font-family: IBM Plex Sans;
+  font-weight: 500;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-group53 {
+  top: 4px;
+  left: 1322px;
+  width: 72px;
+  height: 92px;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-text50 {
+  top: 68px;
+  left: 9px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: relative;
+  font-size: 8px;
+
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: IBM Plex Sans;
+  font-weight: 700;
+  line-height: 107.50000476837158%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-homepagewiththesearchbarandthetotallistofclu-star1 {
+  top: 0px;
+  left: 0px;
+  width: 72px;
+  height: 72px;
+  position: relative;
+  box-sizing: content-box;
+}
+
+.icon {
+  width: 116px;
+  height: 116px;
+}
+
+/* screen size greater than 900 px */
+@media screen and (min-width: 900px) {
+  .logo {
+    /* width: auto;
+    height: 2.1vw; */
+    width: 9.5vw;
+    height: auto;
+  }
+
+  .frame-homepagewiththesearchbarandthetotallistofclu-image2 {
+    width: 2.9vw;
+
+  }
+
+  .frame-homepagewiththesearchbarandthetotallistofclu-text14 {
+    font-size: "20px";
+  }
+
+  .frame-homepagewiththesearchbarandthetotallistofclu-image3 {
+    margin-right: auto;
+
+  }
+
+}
