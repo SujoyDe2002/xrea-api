@@ -1,5 +1,0 @@
-export * from './section-card'
-export * from './info-card'
-export * from './insights-card'
-export * from './only-responsible'
-export * from './methodology'
