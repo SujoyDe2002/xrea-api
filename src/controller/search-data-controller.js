@@ -1,4 +1,4 @@
-const { getSaveSearchDetails, deleteEachSearch, indiviualSearchItem, getLabelDesc, getLabelDesc1, getGeographicAreaName, getMarketSegment, getUseCaseValue, manageSearchResult } = require("../model/search-details");
+const { getSaveSearchDetails, deleteEachSearch, indiviualSearchItem, getLabelDesc, getLabelDesc1, getGeographicAreaName, getMarketSegment, getUseCaseValue, manageSearchResult, isAvailable } = require("../model/search-details");
 const { searchdata } = require('../config/configSetup');
 const maxDraftedData = searchdata.maxValue;
 
@@ -68,7 +68,6 @@ const searchItem = async (req, res) => {
                 usercaselabel1 = srchStr[i].geo_id;
             }
         }
-        //console.log(x);
         for (let i = 0; i < srchStr1.length; i++) {
             if (y) {
                 usecaselabel = usecaselabel + "," + "'" + srchStr1[i].use_case_group + "'";
@@ -78,7 +77,6 @@ const searchItem = async (req, res) => {
                 usecaselabel = "'" + srchStr1[i].use_case_group + "'";
             }
         }
-        //console.log(y);
 
         if (y) {
             result = await getLabelDesc(usecaselabel);
@@ -87,11 +85,9 @@ const searchItem = async (req, res) => {
         }
 
         datarow3 = !result.err && result.rows;
-        //console.log(datarow3)
 
         if (datarow3) {
             labelDesc.label = datarow3
-            //console.log("labelDesc", labelDesc);
         }
 
         const myArray = usercaselabel1.split(",");
@@ -99,9 +95,6 @@ const searchItem = async (req, res) => {
         result = await getGeographicAreaName(x);
 
         datarow2 = !result.err && result.rows;
-        //console.log(datarow2)
-
-
         if (datarow2) {
 
             for (let index = 0; index < myArray.length; index++) {
@@ -113,8 +106,6 @@ const searchItem = async (req, res) => {
                     if (datarow2[j].geo_id == myArray[index]) {
 
                         flag = true;
-
-                        //var medianIncome = null;
 
                         if (datarow2[j].median_income) {
 
@@ -159,7 +150,6 @@ const searchItem = async (req, res) => {
                 }
                 if (flag == false) {
 
-                    //a = String(myArray[index].geo_id);
                     myobj3.data.push({
                         geo_id: myArray[index],
                         tenYearPopGrowthRate: "NA",
@@ -175,12 +165,10 @@ const searchItem = async (req, res) => {
         result = await getMarketSegment(x);
 
         datarow1 = !result.err && result.rows;
-        //console.log(datarow1)
 
         if (datarow1) {
             let generalStatGeoId;
             let foundobj;
-            // for(let j=0; j< myobj3.data.length;j++){
 
             for (let i = 0; i < datarow1.length; i++) {
                 generalStatGeoId = myobj3.data[i].geo_id;
@@ -211,8 +199,6 @@ const searchItem = async (req, res) => {
         result = await getUseCaseValue(x);
 
         datarow = !result.err && result.rows
-        //console.log(datarow)
-
         if (datarow) {
             if (y) {
                 for (let index = 0; index < datarow.length; index++) {
@@ -332,7 +318,6 @@ const searchItem = async (req, res) => {
         }
 
         myobj.label = labelDesc.label;
-        //console.log('myObj', myobj)
         myObj2.data = {
             usecase: myobj, general_stat: myobj3, marketSegment: marketSegmentArrayObj
         }
@@ -340,7 +325,6 @@ const searchItem = async (req, res) => {
         if (!myObj2) {
             return res.status(404).json({ message: "Search Not found" });
         }
-        //console.log('myObj2', myObj2)
         return res.status(200).json(myObj2);
     }
     else {
@@ -357,7 +341,6 @@ const searchItem = async (req, res) => {
 
 const getIndiviualSearchItem = async (req, res) => {
 
-    // const searchObj = {};
     city = [];
     useCase = [];
     result = await indiviualSearchItem(req, res);
@@ -366,7 +349,6 @@ const getIndiviualSearchItem = async (req, res) => {
     datarow = !result.err && result.rows;
     if (datarow) {
 
-        //Geographic Name
         if (datarow[0].geographic_area_name_1 != null && datarow[0].geo_id_1 != null) {
             city.push({ name: datarow[0].geographic_area_name_1, id: datarow[0].geo_id_1 })
         }
@@ -425,9 +407,7 @@ const getIndiviualSearchItem = async (req, res) => {
             city, useCase
         }
 
-        //console.log(searchObj);
-
-        if (!searchObj) {
+       if (!searchObj) {
             return res.status(404).json({ message: "No search Item Found" });
         }
 
@@ -442,8 +422,7 @@ const saveSearch = async (req, res) => {
     srchStr1 = req.body && req.body["usecase"]
     id = req.body && req.body["user_id"]
     username = req.body && req.body["name"]
-    //console.log(username);
-    if(username){
+    if (username) {
         for (let i = 0; i < srchStr.length; i++) {
             if (i == 0) {
                 geographic_area_name1 = srchStr[i].geographic_area_name;
@@ -526,7 +505,7 @@ const saveSearch = async (req, res) => {
                 value_string3 = value_string3 + `, '${geo_id10}'`;
             }
         }
-    
+
         for (let i = 0; i < srchStr1.length; i++) {
             if (i == 0) {
                 use_case_name1 = srchStr1[i].name;
@@ -639,8 +618,8 @@ const saveSearch = async (req, res) => {
                 value_string5 = value_string5 + `,'${use_case_color10}'`;
             }
         }
-    
-    
+
+
         const searchPayload = {
             username: username,
             id: id,
@@ -655,21 +634,27 @@ const saveSearch = async (req, res) => {
             value_string4: value_string4,
             value_string5: value_string5
         }
-    
-        countAfterInsert = await manageSearchResult(searchPayload)
-    
-        if (!countAfterInsert) {
-            return res.status(404).json({ message: "Error in insert" });
+        isTitleNameAvailable = await isAvailable(username, id);
+        isTitleNameCount = isTitleNameAvailable.rows[0].count;
+        if (isTitleNameCount > 0) {
+            return res.status(200).json({ code: 409, message: "Name already exists! Try with different name." });
+        } else {
+
+            countAfterInsert = await manageSearchResult(searchPayload)
+
+            if (!countAfterInsert) {
+                return res.status(404).json({ code: 200, message: "Error in insert" });
+            }
+
+            count = countAfterInsert[0]?.count ?? -1;
+
+            return res.status(200).json({ code: 200, saveSearchCount: count, message: "Search saved successfully!" });
         }
-    
-        count = countAfterInsert[0].count;
-    
-        return res.status(200).json({ saveSearchCount: count });
     }
-    else{
+    else {
         return res.status(406).json({ message: "Not acceptable" });
     }
-   
+
 
 
 }

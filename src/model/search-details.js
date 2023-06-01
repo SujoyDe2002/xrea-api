@@ -110,6 +110,12 @@ const  manageSearchResult = async (searchPayload) => {
     return rowsdata
 }
 
+const isAvailable = async (username, id) => {
+    let queryString = `SELECT count(*) FROM save_search_criteria WHERE user_id='${id}' and save_search_title='${username}'`;
+
+    return pgbackend(queryString);
+}
+
 module.exports = {
     getSaveSearchDetails,
     deleteEachSearch,
@@ -119,5 +125,6 @@ module.exports = {
     getGeographicAreaName,
     getMarketSegment,
     getUseCaseValue,
-    manageSearchResult
+    manageSearchResult,
+    isAvailable
 }

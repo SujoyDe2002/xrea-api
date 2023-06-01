@@ -12,7 +12,7 @@ app.use((err, req, res, next) => {
     if (!err) {
         return next();
     }
-    console.log('err :', err)
+    //console.log('err :', err)
     //res.status(500);
     res.status(500).send('500: something went wrong');
 });
