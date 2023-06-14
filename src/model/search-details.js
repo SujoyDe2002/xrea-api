@@ -39,7 +39,6 @@ const indiviualSearchItem = async (req, res) => {
     } else {
         queryString = `select * from save_search_criteria where save_search_id = ${srchId} and active_status='true' and user_type = 'USER'`;
     }
-
     return pgbackend(queryString)
 
 }
@@ -61,19 +60,19 @@ const getLabelDesc1 = async (usecaselabel) => {
 }
 
 const getGeographicAreaName = async (x) => {
-    let geographicQuery = `select geo_id,ten_year_pop_growth_rate, home_p_to_income, median_income from city_view_2020_updated where geo_id in (${x}) and year = 2020 order by geo_id`;
+    let geographicQuery = `select distinct geo_id,ten_year_pop_growth_rate, home_p_to_income, median_income from city_view_2020_updated where geo_id in (${x}) and year = 2020 order by geo_id`;
 
     return pgbackend(geographicQuery);
 }
 
 const getMarketSegment = async (x) => {
-    let marketSegmentQuery = `select t1.geo_id,cluster_name,cluster_desc from (SELECT index_final_scores.geo_id,index_final_scores.cluster_id,index_final_scores.publication_year,cluster_master.cluster_name,cluster_master.cluster_desc FROM index_final_scores LEFT JOIN cluster_master ON index_final_scores.cluster_id = cluster_master.cluster_id) t1 where t1.geo_id in (${x}) and t1.publication_year = 2020`;
+    let marketSegmentQuery = `select distinct t1.geo_id,cluster_name,cluster_desc from (SELECT index_final_scores.geo_id,index_final_scores.cluster_id,index_final_scores.publication_year,cluster_master.cluster_name,cluster_master.cluster_desc FROM index_final_scores LEFT JOIN cluster_master ON index_final_scores.cluster_id = cluster_master.cluster_id) t1 where t1.geo_id in (${x}) and t1.publication_year = 2020`;
 
     return pgbackend(marketSegmentQuery);
 }
 
 const getUseCaseValue = async (x) => {
-    let queryString = `SELECT geo_id, OR_O, OR_BV, OR_MA, OR_CWYK, OR_YP, OR_R, OR_L FROM index_final_scores WHERE geo_id  IN (${x}) and publication_year=2020`;
+    let queryString = `SELECT distinct geo_id, OR_O, OR_BV, OR_MA, OR_CWYK, OR_YP, OR_R, OR_L FROM index_final_scores WHERE geo_id  IN (${x}) and publication_year=2020`;
 
     return pgbackend(queryString);
 }
@@ -97,10 +96,8 @@ const  manageSearchResult = async (searchPayload) => {
 
                 //console.log('insertQuery', insertQuery)
                 const insertResponse = await client.query(insertQuery);
-                //console.log('insertResponse', insertResponse)
 
                 const { rows } = await client.query(querystring);
-                //console.log('rows', rows)
                 rowsdata = rows
 
             }
@@ -116,6 +113,13 @@ const isAvailable = async (username, id) => {
     return pgbackend(queryString);
 }
 
+const useCaseFetchByCode = async(useCase) => {
+    console.log(useCase);
+    let queryString = `select * from use_case_master where use_case_group in (${useCase})  and active_status = true`;
+    console.log("queryString : ",queryString);
+    return pgbackend(queryString);
+}
+
 module.exports = {
     getSaveSearchDetails,
     deleteEachSearch,
@@ -126,5 +130,6 @@ module.exports = {
     getMarketSegment,
     getUseCaseValue,
     manageSearchResult,
-    isAvailable
+    isAvailable,
+    useCaseFetchByCode
 }

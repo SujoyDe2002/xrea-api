@@ -1,4 +1,4 @@
-const { getSaveSearchDetails, deleteEachSearch, indiviualSearchItem, getLabelDesc, getLabelDesc1, getGeographicAreaName, getMarketSegment, getUseCaseValue, manageSearchResult, isAvailable } = require("../model/search-details");
+const { getSaveSearchDetails, deleteEachSearch, indiviualSearchItem, getLabelDesc, getLabelDesc1, getGeographicAreaName, getMarketSegment, getUseCaseValue, manageSearchResult, isAvailable, useCaseFetchByCode } = require("../model/search-details");
 const { searchdata } = require('../config/configSetup');
 const maxDraftedData = searchdata.maxValue;
 
@@ -347,6 +347,7 @@ const getIndiviualSearchItem = async (req, res) => {
 
 
     datarow = !result.err && result.rows;
+    console.log("datarow", datarow);
     if (datarow) {
 
         if (datarow[0].geographic_area_name_1 != null && datarow[0].geo_id_1 != null) {
@@ -381,33 +382,51 @@ const getIndiviualSearchItem = async (req, res) => {
         }
 
         //Usecase
-        if (datarow[0].use_case_name_1 != null && datarow[0].use_case_group_1 && datarow[0].use_case_color_1) {
-            useCase.push({ name: datarow[0].use_case_name_1, color: datarow[0].use_case_color_1, code: datarow[0].use_case_group_1 })
-        } if (datarow[0].use_case_name_2 != null && datarow[0].use_case_group_2 && datarow[0].use_case_color_2) {
-            useCase.push({ name: datarow[0].use_case_name_2, color: datarow[0].use_case_color_2, code: datarow[0].use_case_group_2 })
-        } if (datarow[0].use_case_name_3 != null && datarow[0].use_case_group_3 && datarow[0].use_case_color_3) {
-            useCase.push({ name: datarow[0].use_case_name_3, color: datarow[0].use_case_color_3, code: datarow[0].use_case_group_3 })
-        } if (datarow[0].use_case_name_4 != null && datarow[0].use_case_group_4 && datarow[0].use_case_color_4) {
-            useCase.push({ name: datarow[0].use_case_name_4, color: datarow[0].use_case_color_4, code: datarow[0].use_case_group_4 })
-        } if (datarow[0].use_case_name_5 != null && datarow[0].use_case_group_5 && datarow[0].use_case_color_5) {
-            useCase.push({ name: datarow[0].use_case_name_5, color: datarow[0].use_case_color_5, code: datarow[0].use_case_group_5 })
-        } if (datarow[0].use_case_name_6 != null && datarow[0].use_case_group_6 && datarow[0].use_case_color_6) {
-            useCase.push({ name: datarow[0].use_case_name_6, color: datarow[0].use_case_color_6, code: datarow[0].use_case_group_6 })
-        } if (datarow[0].use_case_name_7 != null && datarow[0].use_case_group_7 && datarow[0].use_case_color_7) {
-            useCase.push({ name: datarow[0].use_case_name_7, color: datarow[0].use_case_color_7, code: datarow[0].use_case_group_7 })
-        } if (datarow[0].use_case_name_8 != null && datarow[0].use_case_group_8 && datarow[0].use_case_color_8) {
-            useCase.push({ name: datarow[0].use_case_name_8, color: datarow[0].use_case_color_8, code: datarow[0].use_case_group_8 })
-        } if (datarow[0].use_case_name_9 != null && datarow[0].use_case_group_9 && datarow[0].use_case_color_9) {
-            useCase.push({ name: datarow[0].use_case_name_9, color: datarow[0].use_case_color_9, code: datarow[0].use_case_group_9 })
-        } if (datarow[0].use_case_name_10 != null && datarow[0].use_case_group_10 && datarow[0].use_case_color_10) {
-            useCase.push({ name: datarow[0].use_case_name_10, color: datarow[0].use_case_color_10, code: datarow[0].use_case_group_10 })
-        }
+        if (datarow[0].use_case_group_1) {
+            useCase = [...useCase, datarow[0].use_case_group_1]
 
+        } if (datarow[0].use_case_group_2) {
+            useCase = [...useCase, datarow[0].use_case_group_2]
+        } if (datarow[0].use_case_group_3) {
+            useCase = [...useCase, datarow[0].use_case_group_3]
+
+        } if (datarow[0].use_case_group_4) {
+            useCase = [...useCase, datarow[0].use_case_group_4]
+
+        } if (datarow[0].use_case_group_5) {
+            useCase = [...useCase, datarow[0].use_case_group_5]
+
+        } if (datarow[0].use_case_group_6) {
+            useCase = [...useCase, datarow[0].use_case_group_6]
+
+        } if (datarow[0].use_case_group_7) {
+            useCase = [...useCase, datarow[0].use_case_group_7]
+
+        } if (datarow[0].use_case_group_8) {
+            useCase = [...useCase, datarow[0].use_case_group_8]
+
+        } if (datarow[0].use_case_group_9) {
+            useCase = [...useCase, datarow[0].use_case_group_9]
+
+        } if (datarow[0].use_case_group_10) {
+            useCase = [...useCase, datarow[0].use_case_group_9]
+
+        }
+        
+        const datesWrappedInQuotes = useCase.map(element => `'${element}'`);
+        const withCommasInBetween = datesWrappedInQuotes.join(',')
+
+        result = await useCaseFetchByCode(withCommasInBetween);
+
+        useCase = !result.err && result.rows;
+        //console.log("datarowUseCase : ", datarowUseCase);
         searchObj = {
             city, useCase
         }
+        
+        //console.log("searchObj", searchObj);
 
-       if (!searchObj) {
+        if (!searchObj) {
             return res.status(404).json({ message: "No search Item Found" });
         }
 
