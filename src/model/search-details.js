@@ -19,11 +19,9 @@ const deleteEachSearch = async (req, res) => {
 
     let saveSearchId = req.body && req.body["searchId"];
 
-    console.log(saveSearchId);
 
     if (saveSearchId) {
         qrystr = `DELETE FROM save_search_criteria where save_search_id=${saveSearchId}`
-        console.log(qrystr);
         return pgbackend(qrystr)
     }
 
@@ -78,9 +76,9 @@ const getGeographicAreaName = async (x) => {
 
 const getMarketSegment = async (x) => {
     let marketSegmentQuery = `select t1.geo_id,cluster_name,cluster_desc from 
-    (SELECT index_final_scores.geo_id,index_final_scores.cluster_id,index_final_scores.publication_year,cluster_master.cluster_name,cluster_master.cluster_desc 
-    FROM index_final_scores LEFT JOIN cluster_master ON index_final_scores.cluster_id = cluster_master.cluster_id) t1 
-    where t1.geo_id in (${x}) and t1.publication_year = 2020`;
+    (SELECT index_final_scores_mod.geo_id,index_final_scores_mod.cluster_id,index_final_scores_mod.publication_year,cluster_master_mod.cluster_name,cluster_master_mod.cluster_desc 
+    FROM index_final_scores_mod LEFT JOIN cluster_master_mod ON index_final_scores_mod.cluster_id = cluster_master_mod.cluster_id) t1 
+    where t1.geo_id in (${x}) and t1.publication_year = 2021`;
 
     return pgbackend(marketSegmentQuery);
 }
@@ -154,7 +152,11 @@ const isAvailable = async (username, id) => {
 
 const useCaseFetchByCode = async (useCase) => {
 
-    let queryString = `select * from use_case_master where use_case_group in (${useCase})  and active_status = true`;
+    let queryString = `select  use_case_index_group as use_case_group ,
+    use_case_group_desc ,
+    priority_label, 
+    use_case_color ,
+    active_status  from use_case_master_mod where use_case_index_group in (${useCase})  and active_status = true`;
 
     return pgbackend(queryString);
 }
