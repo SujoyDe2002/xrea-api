@@ -13,7 +13,7 @@ const { Client } = require('pg')
     user: "xreaadmin@xrea-india-postgres",
     port: 5432,
     password: "xr34-4dm1n-0e2K5!",
-    database: "postgres"
+     database: "xrea_db_modified"
 }) 
 
 pgClient.connect()
