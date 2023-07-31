@@ -12,8 +12,6 @@ app.use((err, req, res, next) => {
     if (!err) {
         return next();
     }
-    //console.log('err :', err)
-    //res.status(500);
     res.status(500).send('500: something went wrong');
 });
 app.set("view engine", "ejs");
@@ -23,9 +21,6 @@ app.use("/api/masters", masterDataRouter);
 app.use("/api/search", searchDataRouter);
 app.use("/api/users",userDataRouter);
 
-/* app.use("/api", (req, res, next) => {
-    res.send("hello")
-}) */
 
 //define port
 app.listen(3011, () => console.log("app started at 3011..."));

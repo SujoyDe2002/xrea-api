@@ -16,7 +16,7 @@ const executeTransaction = async (callback) => {
             throw (error)
         }
     } finally {
-       // await pgClient.end();
+        // await pgClient.end();
     }
 };
 module.exports = { pgbackend, executeTransaction }

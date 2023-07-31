@@ -6,9 +6,4 @@ const { getAllCountries, getAllUseCases } = require("../controller/master-data-c
 
 masterDataRouter.get("/countries",urlencodedParser, getAllCountries);
 masterDataRouter.get("/usecases", urlencodedParser, getAllUseCases);
-// masterDataRouter.post('/add', addBlog);
-// masterDataRouter.put("/update/:id", updateBlog);
-// masterDataRouter.get("/:id", getById);
-// masterDataRouter.delete("/:id", deleteBlog);
-// masterDataRouter.get("/user/:id", getByUserId)
 module.exports = masterDataRouter;
