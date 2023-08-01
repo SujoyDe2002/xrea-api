@@ -246,16 +246,18 @@ const saveSearch = async (req, res) => {
                 value_string5: value_string5
             }
 
-            countAfterInsert = await manageSearchResult(searchPayload)
+            isTitleNameAvailable = await isAvailable(username, id);
+            isTitleNameCount = isTitleNameAvailable.rows[0].count;
 
+            if (isTitleNameCount > 0) {
+                return res.status(200).json({ code: 409, message: "Name already exists! Try with different name." });
+            } else {
+                countAfterInsert = await manageSearchResult(searchPayload)
 
-            count = countAfterInsert[0].count
-
-
-            return response(res, "Saved List Data fetch Successfully", httpStatusCodes.OK, count);
-
+                count = countAfterInsert[0].count
+                return res.status(200).json({ code: 200, saveSearchCount: count, message: "Search saved successfully!" });
+            }
         }
-
     } catch (err) {
         console.log(err);
     }
