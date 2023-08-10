@@ -75,10 +75,15 @@ const getGeographicAreaName = async (x) => {
 }
 
 const getMarketSegment = async (x) => {
-    let marketSegmentQuery = `select t1.geo_id,cluster_name,cluster_desc from 
-    (SELECT index_final_scores_mod.geo_id,index_final_scores_mod.cluster_id,index_final_scores_mod.publication_year,cluster_master_mod.cluster_name,cluster_master_mod.cluster_desc 
-    FROM index_final_scores_mod LEFT JOIN cluster_master_mod ON index_final_scores_mod.cluster_id = cluster_master_mod.cluster_id) t1 
-    where t1.geo_id in (${x}) and t1.publication_year = 2021`;
+    let marketSegmentQuery = `select t1.geo_id,cluster_name,cluster_desc, cluster_code from 
+    (SELECT index_final_scores_mod.geo_id,
+     index_final_scores_mod.cluster_id,
+     index_final_scores_mod.publication_year,
+     cluster_master_mod.cluster_name,
+     cluster_master_mod.cluster_desc,
+     cluster_master_mod.cluster_code
+     FROM index_final_scores_mod LEFT JOIN cluster_master_mod ON index_final_scores_mod.cluster_id = cluster_master_mod.cluster_id) t1 
+     where t1.geo_id in (${x}) and t1.publication_year = 2021`;
 
     return pgbackend(marketSegmentQuery);
 }

@@ -22,9 +22,16 @@ const cluster_details = async (datarow1, geographicNameObj) => {
             cluster_desc = foundobj.cluster_desc
         }
 
+        if (foundobj.cluster_code == null) {
+            cluster_code = "Cluster Code NA";
+        } else {
+            cluster_code = foundobj.cluster_code
+        }
+
 
         marketSegmentArrayObj.data.push({
-            geo_id: geographic_Id, clusterName: clusterName, cluster_desc: cluster_desc
+            geo_id: geographic_Id, clusterName: clusterName, cluster_desc: cluster_desc, cluster_code : cluster_code
+
         })
 
     }
